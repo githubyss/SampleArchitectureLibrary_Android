@@ -12,5 +12,5 @@ package com.githubyss.sample_architecture
  * @createdTime 2022/07/14 15:32:19
  */
 object DataCenterModel {
-    fun getData() = listOf("Hi", "Githubyss")
+    fun getData() = listOf("githubyss", "1234567")
 }
