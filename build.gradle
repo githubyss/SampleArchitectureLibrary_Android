@@ -68,7 +68,6 @@ android {
             }
             res {
                 srcDirs 'src/main/res'
-                srcDirs 'src/main/res/common'
             }
         }
 
@@ -79,12 +78,11 @@ android {
                     srcDirs 'src/app/kotlin'
                 }
                 res {
-                    srcDirs 'src/main/res'
-                    srcDirs 'src/main/res/common'
+                    srcDirs 'src/app/res'
 
-                    srcDirs 'src/main/res/mvc'
-                    srcDirs 'src/main/res/mvp'
-                    srcDirs 'src/main/res/mvvm'
+                    srcDirs 'src/app/res/mvc'
+                    srcDirs 'src/app/res/mvp'
+                    srcDirs 'src/app/res/mvvm'
                 }
             }
         }
@@ -99,6 +97,10 @@ android {
         all {
             // set -> println "集合 ${set.name} 的文件是 ${set.java.srcDirs}"
         }
+    }
+
+    viewBinding {
+        enabled feature.isViewBindingEnabled
     }
 }
 
