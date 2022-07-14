@@ -11,7 +11,7 @@ object ViewBinder {
         et.doAfterTextChanged {
             if (!TextUtils.equals(stringAttr.value, it)) {
                 stringAttr.value = it.toString()
-                logD(msg = "表现数据通知内存改变 >> $it}")
+                logD(msg = "表现数据通知内存改变 >> $it")
             }
         }
 
