@@ -1,0 +1,109 @@
+plugins {
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+def isShellApp = project.getName() == rootProject.shellApp
+def isLaunchApp = project.getName() == rootProject.launchApp
+
+if (isShellApp) {
+    println "isShellApp: ${isShellApp}"
+}
+
+if (isLaunchApp) {
+    println "isLaunchApp: ${isLaunchApp}"
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+
+
+apply from: "${rootDir}/config/buildConfigs.gradle"
+apply from: "${rootDir}/config/optionConfigs.gradle"
+apply from: "${rootDir}/config/featureConfigs.gradle"
+apply from: "${rootDir}/config/versionConfigs.gradle"
+apply from: "${rootDir}/config/signingConfigs.gradle"
+apply from: "${rootDir}/config/libConfigs.gradle"
+
+android {
+    resourcePrefix 'samparch_'
+
+    defaultConfig {
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        debug {
+            if (isLaunchApp) {
+                shrinkResources feature.isMinifyEnabled
+            }
+        }
+
+        release {
+            if (isLaunchApp) {
+                shrinkResources true
+            }
+        }
+    }
+
+    flavorDimensions 'library'
+    productFlavors {
+        if (isLaunchApp) {
+            app {
+                dimension 'library'
+                applicationId 'com.githubyss.sample_architecture'
+                versionCode 1
+                versionName "1.0"
+                manifestPlaceholders = [APP_NAME: "架构模板"]
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            java {
+                srcDirs 'src/main/java'
+                srcDirs 'src/main/kotlin'
+            }
+            res {
+                srcDirs 'src/main/res'
+                srcDirs 'src/main/res/common'
+            }
+        }
+
+        if (isLaunchApp) {
+            app {
+                java {
+                    srcDirs 'src/app/java'
+                    srcDirs 'src/app/kotlin'
+                }
+                res {
+                    srcDirs 'src/main/res'
+                    srcDirs 'src/main/res/common'
+
+                    srcDirs 'src/main/res/mvc'
+                    srcDirs 'src/main/res/mvp'
+                    srcDirs 'src/main/res/mvvm'
+                }
+            }
+        }
+
+        test {
+            java {
+                srcDirs 'src/test/java'
+                srcDirs 'src/test/kotlin'
+            }
+        }
+
+        all {
+            // set -> println "集合 ${set.name} 的文件是 ${set.java.srcDirs}"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':CommonKitSdk_Android')
+}
