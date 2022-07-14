@@ -80,6 +80,7 @@ android {
                 res {
                     srcDirs 'src/app/res'
 
+                    srcDirs 'src/app/res/old'
                     srcDirs 'src/app/res/mvc'
                     srcDirs 'src/app/res/mvp'
                     srcDirs 'src/app/res/mvvm'
