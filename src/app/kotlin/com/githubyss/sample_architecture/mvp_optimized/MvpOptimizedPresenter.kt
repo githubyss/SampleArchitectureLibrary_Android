@@ -17,7 +17,7 @@ import com.githubyss.sample_architecture.DataCenterModel
 class MvpOptimizedPresenter(private val iView: IView) {
     fun init() {
         // 在 P 中调度 M
-        val data = DataCenterModel.getData()
+        val data = DataCenterModel.data
 
         // 在 P 中调度 V
         iView.showData(data)

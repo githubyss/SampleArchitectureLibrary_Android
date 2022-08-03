@@ -19,18 +19,20 @@ import com.githubyss.sample_architecture.DataCenterModel
  * @createdTime 2022/07/14 17:19:14
  */
 class MvvmViewModel(private val etUsername: EditText, private val etPassword: EditText) {
-    var username: StringAttr = StringAttr()
-    var password: StringAttr = StringAttr()
+    private var username: StringAttr = StringAttr()
+    private var password: StringAttr = StringAttr()
 
     init {
         // 在 VM 中绑定 M、V
         ViewBinder.bind(etUsername, username)
         ViewBinder.bind(etPassword, password)
+
+        initData()
     }
 
-    fun init() {
-        // 在 P 中调度 M
-        val data: List<String> = DataCenterModel.getData()
+    private fun initData() {
+        // 在 VM 中调度 M
+        val data: List<String> = DataCenterModel.data
         username.value = data[0]
         password.value = data[1]
     }

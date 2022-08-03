@@ -27,7 +27,7 @@ class OldActivity : AppCompatActivity(/*R.layout.samparch_activity_mvc*/) {
         etPassword = findViewById(R.id.et_password)
 
         // 在 C 中与 M 交互
-        val data = DataCenterModel.getData()
+        val data = DataCenterModel.data
 
         // 在 C 中与 V 交互
         etUsername.setText(data[0])

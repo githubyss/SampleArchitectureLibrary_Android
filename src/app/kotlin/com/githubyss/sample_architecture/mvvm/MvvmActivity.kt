@@ -26,8 +26,8 @@ import com.githubyss.sample_architecture.R
  * @createdTime 2022/07/14 17:09:07
  */
 class MvvmActivity : AppCompatActivity() {
-    lateinit var etUsername: EditText
-    lateinit var etPassword: EditText
+    private lateinit var etUsername: EditText
+    private lateinit var etPassword: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +38,6 @@ class MvvmActivity : AppCompatActivity() {
         etPassword = findViewById(R.id.et_password)
 
         // 连接 V 与 VM
-        MvvmViewModel(etUsername, etPassword).init()
+        MvvmViewModel(etUsername, etPassword)
     }
 }

@@ -15,7 +15,7 @@
         >
 
         <activity
-            android:name=".mvvm.MvvmActivity"
+            android:name=".mvvm_databinding.MvvmDataBindingActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"

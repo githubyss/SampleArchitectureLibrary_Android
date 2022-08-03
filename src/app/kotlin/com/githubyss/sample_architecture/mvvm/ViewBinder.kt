@@ -6,6 +6,14 @@ import androidx.core.widget.doAfterTextChanged
 import com.githubyss.mobile.common.kit.util.logD
 
 
+/**
+ * ViewBinder
+ * 视图绑定工具类
+ *
+ * @author Ace Yan
+ * @github githubyss
+ * @createdTime 2022/07/14 22:25:43
+ */
 object ViewBinder {
     fun bind(et: EditText, stringAttr: StringAttr) {
         et.doAfterTextChanged {

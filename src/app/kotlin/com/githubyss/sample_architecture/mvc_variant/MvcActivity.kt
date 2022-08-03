@@ -45,7 +45,7 @@ class MvcActivity : AppCompatActivity() {
         mvcView = findViewById(R.id.mvc_view)
 
         // 在 C 中与 M 交互
-        val data = DataCenterModel.getData()
+        val data = DataCenterModel.data
 
         // 在 C 中与 V 交互
         mvcView.showData(data)

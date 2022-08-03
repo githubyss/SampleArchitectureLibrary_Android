@@ -12,5 +12,14 @@ package com.githubyss.sample_architecture
  * @createdTime 2022/07/14 15:32:19
  */
 object DataCenterModel {
-    fun getData() = listOf("githubyss", "1234567")
+    val data = arrayListOf<String>("githubyss", "12345")
+
+    fun changeData() {
+        data[1] += "="
+    }
+
+    fun updateData(newData: List<String>) {
+        data.clear()
+        data.addAll(newData)
+    }
 }

@@ -100,8 +100,8 @@ android {
         }
     }
 
-    viewBinding {
-        enabled feature.isViewBindingEnabled
+    dataBinding {
+        enabled feature.isDataBindingEnabled
     }
 }
 
