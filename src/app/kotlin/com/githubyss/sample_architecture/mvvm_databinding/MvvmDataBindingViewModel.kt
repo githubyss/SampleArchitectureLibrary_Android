@@ -3,7 +3,7 @@ package com.githubyss.sample_architecture.mvvm_databinding
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.githubyss.mobile.common.kit.util.logD
+import com.githubyss.common.kit.util.logD
 import com.githubyss.sample_architecture.DataCenterModel
 
 

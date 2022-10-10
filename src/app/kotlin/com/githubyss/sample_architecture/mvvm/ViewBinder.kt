@@ -3,7 +3,7 @@ package com.githubyss.sample_architecture.mvvm
 import android.text.TextUtils
 import android.widget.EditText
 import androidx.core.widget.doAfterTextChanged
-import com.githubyss.mobile.common.kit.util.logD
+import com.githubyss.common.kit.util.logD
 
 
 /**

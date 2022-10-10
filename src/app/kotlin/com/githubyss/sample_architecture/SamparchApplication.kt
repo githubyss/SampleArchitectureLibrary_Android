@@ -1,6 +1,6 @@
 package com.githubyss.sample_architecture
 
-import com.githubyss.mobile.common.kit.base.application.BaseApplication
+import com.githubyss.common.kit.base.application.BaseApplication
 import kotlin.properties.Delegates
 
 

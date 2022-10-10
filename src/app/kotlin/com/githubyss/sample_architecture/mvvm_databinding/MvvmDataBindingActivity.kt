@@ -5,7 +5,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.githubyss.mobile.common.kit.util.logD
+import com.githubyss.common.kit.util.logD
 import com.githubyss.sample_architecture.databinding.SamparchActivityMvvmDatabindingBinding
 
 
